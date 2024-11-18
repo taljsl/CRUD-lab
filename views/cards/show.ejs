@@ -21,8 +21,13 @@
     <%}else {%>
     <p>This card IS NOT Commander legal!</p>
     <%}%>
-
-
+    <!-- delete -->
+    <form action="/cards/<%=card._id%>?_method=DELETE" method="post">
+      <button type="submit">Delete <%=card.name%></button>
+    </form>
+    <!-- edit -->
+    <a href="/cards/<%=card._id%>/edit">Edit Card</a>
+    <!-- return to card list -->
     <a href="/cards">Back to Card List</a>
   </body>
 </html>

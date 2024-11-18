@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit <%=card.name%></h1>
+    <form action="/cards/<%=card._id%>?_method=PUT" method="post">
+    
+<!-- Card Name and Field -->
+<label for="name">Card Name: </label>
+<input
+  type="text"
+  name="name"
+  id="name"
+  value='<%=card.name%>'
+  placeholder="ex. Aurelia, Exemplar of Justice"
+/>
+<!-- Cost Name and Field -->
+<label for="cost">Cost: </label>
+<input type="text" name="cost" id="cost" value="<%=card.cost%>" placeholder="ex 2RW" />
+<!-- Card Expansion -->
+<label for="set">Set</label>
+<input
+  type="text"
+  name="set"
+  id="set"
+  value="<%=card.set%>"
+  placeholder="ex: Guilds of Ravnica"
+/>
+<!-- keywords -->
+<label for="keywords">Keywords</label>
+<input
+  type="text"
+  name="keywords"
+  id="keywords"
+  value="<%=card.keywords%>"
+  placeholder="ex: Flying, Mentor"
+/>
+<!-- cardType -->
+<label for="type">Card Type</label>
+<input
+  type="text"
+  name="type"
+  id="type"
+  value="<%=card.type%>"
+  placeholder="ex:Legendary Creature-Angel, Instant"
+/>
+<!-- rarity -->
+<label for="rarity">Rarity</label>
+<select name="rarity" id="rarity">
+    <option value="Common" <% if (card.rarity === "Common") { %>selected<% } %>>Common</option>
+    <option value="Uncommon" <% if (card.rarity === "Uncommon") { %>selected<% } %>>Uncommon</option>
+    <option value="Rare" <% if (card.rarity === "Rare") { %>selected<% } %>>Rare</option>
+    <option value="Mythic Rare" <% if (card.rarity === "Mythic Rare") { %>selected<% } %>>Mythic Rare</option>
+</select>
+<!-- specialRules -->
+<label for="specialrules">Special Rules:</label>
+<input
+  type="text"
+  name="specialrules"
+  id="specialrules"
+  value="<%=card.specialrules%>"
+  placeholder="ETB's, Triggers etc."
+/>
+<!-- Power/Toughness -->
+<label for="pt">Power and Tougness</label>
+<input type="text" name="pt" id="pt" value="<%=card.pt%>" placeholder="ex: 2/4" />
+<!-- flavor text -->
+<label for="flavorText">Flavor Text</label>
+<input
+  type="text"
+  name="flavorText"
+  id="flavorText"
+  value="<%=card.flavorText%>"
+  placeholder="Enter If Applicable"
+/>
+<!-- Legal in Commander -->
+<label for="isCommanderLegal">Is This Card Legal in Commander</label>
+<input type="checkbox" name="isCommanderLegal" id="isCommanderLegal" <%if (card.isCommanderLegal) {%>checked<%}%> />
+<!-- submit button -->
+<button type="submit">Update Card</button>
+
+    </form>
+
+    
+</body>
+</html>
