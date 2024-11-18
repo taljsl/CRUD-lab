@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create A Card</title>
+  </head>
+  <body>
+    <h1>Create a Card</h1>
+    <div>
+      <form action="/cards" method="post">
+        <!-- Card Name and Field -->
+        <label for="name">Card Name: </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="ex. Aurelia, Exemplar of Justice"
+        />
+        <!-- Cost Name and Field -->
+        <label for="cost">Cost: </label>
+        <input type="text" name="cost" id="cost" placeholder="ex 2RW" />
+        <!-- Card Expansion -->
+        <label for="set">Set</label>
+        <input
+          type="text"
+          name="set"
+          id="set"
+          placeholder="ex: Guilds of Ravnica"
+        />
+        <!-- keywords -->
+        <label for="keywords">Keywords</label>
+        <input
+          type="text"
+          name="keywords"
+          id="keywords"
+          placeholder="ex: Flying, Mentor"
+        />
+        <!-- cardType -->
+        <label for="typeype">Card Type</label>
+        <input
+          type="text"
+          name="type"
+          id="type"
+          placeholder="ex:Legendary Creature-Angel, Instant"
+        />
+        <!-- rarity -->
+        <label for="rarity">Rarity</label>
+        <select name="rarity" id="rarity">
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Mythic Rare">Mythic Rare</option>
+        </select>
+        <!-- specialRules -->
+        <label for="specialrules">Special Rules:</label>
+        <input
+          type="text"
+          name="specialrules"
+          id="specialrules"
+          placeholder="ETB's, Triggers etc."
+        />
+        <!-- Power/Toughness -->
+        <label for="pt">Power and Tougness</label>
+        <input type="text" name="pt" id="pt" placeholder="ex: 2/4" />
+        <!-- flavor text -->
+        <label for="flavorText">Flavor Text</label>
+        <input
+          type="text"
+          name="flavorText"
+          id="flavorText"
+          placeholder="Enter If Applicable"
+        />
+        <!-- Legal in Commander -->
+        <label for="isCommanderLegal">Is This Card Legal in Commander</label>
+        <input type="checkbox" name="isCommanderLegal" id="isCommanderLegal" />
+        <!-- submit button -->
+        <button type="submit">Add Card</button>
+
+
+        <a href="/cards">Back to Cards</a>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=card.name%></title>
+  </head>
+  <body>
+    <h1><%=card.name%></h1>
+
+    <p>Cost: <%=card.cost%>`</p>
+    <p>Type: <%=card.type%>`</p>
+    <p>Set: <%=card.set%></p>
+    <p>Rarity: <%=card.rarity%></p>
+    <p>Key Words: <%=card.keywords%></p>
+    <p>Special Rules: <%=card.specialrules%></p>
+    <p>Power and Toughness: <%=card.pt%></p>
+    <p>Flavor Text: <%=card.flavorText%></p>
+    <%if (card.isCommanderLegal) {%>
+    <p>This card IS Commander legal!</p>
+    <%}else {%>
+    <p>This card IS NOT Commander legal!</p>
+    <%}%>
+
+
+    <a href="/cards">Back to Card List</a>
+  </body>
+</html>
