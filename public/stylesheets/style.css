@@ -30,12 +30,25 @@ footer {
   height: 30%;
 }
 
-.fruits-index-link {
-  text-decoration: none;
+.cards-index-link {
+    background-color: #0f52ba;
+    color: white;
+    text-transform: uppercase;
+    padding: 40px 0;
+    font-size: 1.3em;
+    border-radius: 15px;
+    display: flex;
+    place-items: center;
+    font-weight: bold;
+    text-align: center;
+    /* width: 30%; */
+    height: 50px;
+    
 }
 
 .index-link-text {
-  background-color: #6b4a3a;
+  
+    background-color: #6b4a3a;
   color: white;
   font-size: 1.4em;
   width: 10em;
@@ -101,27 +114,34 @@ button:active {
 .card-actions {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   place-items: center;
-  width: 100%;
+  width: 37%;
   height: 130px;
   padding: 20px 0;
+  
+  
 }
 .delete-form {
-  padding: 0;
+  /* padding: 0; */
   box-shadow: 0 0;
   background-color: transparent;
   height: 50px;
-  margin: 0 20px 0 0;
+  /* margin: 0 20px 0 0; */
+  /* margin:auto; */
   min-height: 100%;
+  padding: 0;
+  border: 2px solid red;
 }
 .delete-button {
   background-color: #0f52ba;
   text-transform: uppercase;
-  padding: 40px 15px;
-  width: 70%;
+  /* padding: 40px 15px; */
+  /* width: 70%; */
   font-size: 1.3em;
-  margin: 0;
+  margin:auto;
   min-height: 100%;
+  border: 2px solid green;
 }
 
 .edit-link {
@@ -141,6 +161,8 @@ button:active {
   text-align: center;
   width: 70%;
   height: 50px;
+  border: 2px solid red;
+  margin: auto;
 }
 .delete-button:hover {
   background-color: red;
