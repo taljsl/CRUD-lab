@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cards</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <div class="index-header-div">
     <h1>All of our Cards</h1>
+    <a href="/cards/new" class="add-card">Add A Card</a>
+  </div>
     <ul>
       <% cards.forEach(card => { %>
-      <li><a href="/cards/<%= card._id %>"><%=card.name%></a></li>
+      <li><a href="/cards/<%= card._id %>"class = 'card-cards'><%=card.name%></a></li>
       <%})%>
     </ul>
+
   </body>
 </html>

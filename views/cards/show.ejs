@@ -4,30 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%=card.name%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%=card.name%></h1>
-
-    <p>Cost: <%=card.cost%>`</p>
-    <p>Type: <%=card.type%>`</p>
-    <p>Set: <%=card.set%></p>
-    <p>Rarity: <%=card.rarity%></p>
-    <p>Key Words: <%=card.keywords%></p>
-    <p>Special Rules: <%=card.specialrules%></p>
-    <p>Power and Toughness: <%=card.pt%></p>
-    <p>Flavor Text: <%=card.flavorText%></p>
-    <%if (card.isCommanderLegal) {%>
-    <p>This card IS Commander legal!</p>
-    <%}else {%>
-    <p>This card IS NOT Commander legal!</p>
-    <%}%>
-    <!-- delete -->
-    <form action="/cards/<%=card._id%>?_method=DELETE" method="post">
-      <button type="submit">Delete <%=card.name%></button>
-    </form>
-    <!-- edit -->
-    <a href="/cards/<%=card._id%>/edit">Edit Card</a>
-    <!-- return to card list -->
-    <a href="/cards">Back to Card List</a>
+    <div class="card-details">
+      <h1><%=card.name%></h1>
+      <img src="<%=card.imageUrl%>" alt="">
+      <p>Cost: <%=card.cost%>`</p>
+      <p>Type: <%=card.type%>`</p>
+      <p>Set: <%=card.set%></p>
+      <p>Rarity: <%=card.rarity%></p>
+      <p>Key Words: <%=card.keywords%></p>
+      <p>Special Rules: <%=card.specialrules%></p>
+      <p>Power and Toughness: <%=card.pt%></p>
+      <p>Flavor Text: <%=card.flavorText%></p>
+      <%if (card.isCommanderLegal) {%>
+      <p>This card IS Commander legal!</p>
+      <%}else {%>
+      <p>This card IS NOT Commander legal!</p>
+      <%}%>
+    </div>
+    <div class="card-actions">
+      <!-- delete -->
+      <form action="/cards/<%=card._id%>?_method=DELETE" method="post" class ='delete-form'>
+        <button type="submit"class = 'delete-button'>Delete <%=card.name%></button>
+      </form>
+      <!-- edit -->
+      <a href="/cards/<%=card._id%>/edit" class ='edit-link'>
+        <div class="edit-text">Edit Card</div>
+      </a>
+      <!-- return to card list -->
+      <a href="/cards" class="cards-index-link">
+        <div class="index-link-text">Back to Card List</div>
+      </a>
+    </div>
   </body>
 </html>

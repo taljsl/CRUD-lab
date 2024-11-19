@@ -11,7 +11,7 @@ const cardSchema = new mongoose.Schema({
     pt: String,
     flavorText: String,
     isCommanderLegal: Boolean,
-
+    imageUrl:String,
 })
 
 const Card = mongoose.model('Card', cardSchema)

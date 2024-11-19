@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create A Card</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1>Create a Card</h1>
@@ -71,12 +72,16 @@
           id="flavorText"
           placeholder="Enter If Applicable"
         />
+        <label for="imageURL">Image URL</label>
+        <input type="text" name="imageUrl" id="imageUrl">
+        
         <!-- Legal in Commander -->
+         <div class="checkbox-div">
         <label for="isCommanderLegal">Is This Card Legal in Commander</label>
         <input type="checkbox" name="isCommanderLegal" id="isCommanderLegal" />
+      </div>
         <!-- submit button -->
         <button type="submit">Add Card</button>
-
 
         <a href="/cards">Back to Cards</a>
       </form>

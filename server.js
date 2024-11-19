@@ -34,6 +34,11 @@ const Card = require("./models/cards");
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+
+// middleware for static files
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
 // all gets below
 
 app.get("/", async (req, res) => {
@@ -81,9 +86,8 @@ app.get("/cards/:cardId", async (req, res) => {
 
 app.get("/cards/:cardId/edit", async (req, res) => {
   const specificCard = await Card.findById(req.params.cardId);
-  res.render("cards/edit.ejs", { card: specificCard, });
+  res.render("cards/edit.ejs", { card: specificCard });
 });
-
 
 app.put("/cards/:cardId", async (req, res) => {
   if (req.body.isCommanderLegal === "on") {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
     <h1>Edit <%=card.name%></h1>
@@ -77,9 +78,14 @@
   value="<%=card.flavorText%>"
   placeholder="Enter If Applicable"
 />
+<!-- Card Image -->
+<label for="imageURL">Image URL</label>
+        <input type="text" name="imageUrl" id="imageUrl" value="<%=card.imageUrl%>">
 <!-- Legal in Commander -->
+ <div class="checkbox-div">
 <label for="isCommanderLegal">Is This Card Legal in Commander</label>
 <input type="checkbox" name="isCommanderLegal" id="isCommanderLegal" <%if (card.isCommanderLegal) {%>checked<%}%> />
+</div>
 <!-- submit button -->
 <button type="submit">Update Card</button>
 
